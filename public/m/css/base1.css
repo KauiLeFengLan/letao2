@@ -1,0 +1,88 @@
+.lt-nav-links {
+  padding: 10px;
+}
+.lt-nav-links > a {
+  width: 33.33%;
+  float: left;
+}
+.lt-nav-links > a > img {
+  width: 100%;
+  vertical-align: top;
+}
+.lt-brand {
+  padding: 0 10px;
+}
+.lt-brand .lt-title {
+  width: 100%;
+}
+.lt-brand > ul {
+  padding: 10px 0;
+  overflow: hidden;
+}
+.lt-brand > ul > li {
+  width: 25%;
+  float: left;
+}
+.lt-brand > ul > li > a {
+  display: block;
+}
+.lt-brand > ul > li > a > img {
+  width: 100%;
+}
+.lt-product {
+  padding: 0 10px;
+}
+.lt-product .lt-title {
+  width: 100%;
+}
+.lt-product > ul {
+  padding: 6px 0;
+  overflow: hidden;
+}
+.lt-product > ul > li {
+  width: 50%;
+  float: left;
+  padding: 5px;
+}
+.lt-product > ul > li > a {
+  display: block;
+  box-shadow: 0 0 5px #ccc;
+  padding: 5px;
+}
+.lt-product > ul > li > a > img {
+  width: 100%;
+}
+.lt-product > ul > li > a > .name {
+  display: block;
+  color: #8f8f94;
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px;
+  height: 38px;
+  overflow: hidden;
+  padding: 5px;
+}
+.lt-product > ul > li > a p {
+  text-align: center;
+  padding-top: 6px;
+}
+.lt-product > ul > li > a p span:first-child {
+  color: #f20;
+  padding-right: 2px;
+}
+.lt-product > ul > li > a p span:last-child {
+  text-decoration: line-through;
+  padding-left: 2px;
+}
+.lt-product > ul > li > a .buy-now {
+  display: block;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #006699;
+  color: #fff;
+  font-size: 14px;
+  box-radius: 4px;
+  margin: 0 auto 5px auto;
+}

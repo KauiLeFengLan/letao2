@@ -1,0 +1,54 @@
+.lt-content {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  bottom: 50px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.lt-content .category-left,
+.lt-content .category-right {
+  height: 100%;
+  position: relative;
+}
+.lt-content .category-left {
+  width: 80px;
+  float: left;
+}
+.lt-content .category-left .links {
+  background-color: #fff;
+}
+.lt-content .category-left .links > a {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #000;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+.lt-content .category-left .links .active {
+  background-color: #f5f5f5;
+  border-right: 1px solid transparent;
+}
+.lt-content .category-right {
+  margin-left: 90px;
+}
+.lt-content .category-right .brand-list {
+  margin-top: 10px;
+  background-color: #fff;
+}
+.lt-content .category-right .brand-list li {
+  width: 33.33%;
+  float: left;
+}
+.lt-content .category-right .brand-list li a {
+  display: block;
+}
+.lt-content .category-right .brand-list li a img {
+  width: 100%;
+}
+.lt-content .category-right .brand-list li a p {
+  text-align: center;
+}

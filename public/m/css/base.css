@@ -1,0 +1,42 @@
+html,
+body,
+ul,
+li,
+img,
+a,
+p,
+div,
+form,
+input {
+  padding: 0;
+  margin: 0;
+}
+body,
+.mui-content {
+  background: #FFF;
+  font-size: 14px;
+}
+ul {
+  list-style: none;
+}
+.lt-header {
+  background-color: #006699;
+}
+.lt-header h1 {
+  color: #fff;
+}
+.lt-header .mui-icon-search {
+  color: #fff;
+}
+.lt-footer {
+  background-color: #006699;
+}
+.lt-footer .mui-tab-item {
+  color: #fff;
+}
+.lt-footer .mui-tab-item.mui-active {
+  color: darkorange;
+}
+.a {
+  color: #000;
+}
