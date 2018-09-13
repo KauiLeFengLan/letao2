@@ -52,3 +52,8 @@
 .lt-content .category-right .brand-list li a p {
   text-align: center;
 }
+.noresult {
+  padding: 10px;
+  font-size: 14px;
+  color: #f20;
+}

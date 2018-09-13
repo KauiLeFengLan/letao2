@@ -12,6 +12,13 @@ $(function(){
             var html = template('category-first',{result:res.rows});
             //console.log(html);
             $('#links').html(html);
+
+            if(res.rows.length){
+                $('#links').find('a').eq(0).addClass('active');
+
+               var id = res.rows[0].id;
+                getSecondCategory(id);
+            }
         }
     });
 
@@ -20,18 +27,24 @@ $(function(){
     $('#links').on('click','a',function(){
         var id = $(this).attr('data-id');
 
-        $.ajax({
-            url:'/category/querySecondCategory',
-            type:'get',
-            data:{
-                id:id
-            },
-            success:function(rows){
-                var html = template('category-lt',rows);
-                //console.log(html)
-                $('#brand-list').html(html);
-            }
-        });
+        $(this).addClass('active').siblings().removeClass('active');
+
+        getSecondCategory(id);
     });
 
 });
+
+function getSecondCategory(id){
+    $.ajax({
+        url:'/category/querySecondCategory',
+        type:'get',
+        data:{
+            id:id
+        },
+        success:function(rows){
+            var html = template('category-lt',rows);
+            //console.log(html)
+            $('#brand-list').html(html);
+        }
+    });
+}
