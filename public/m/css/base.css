@@ -21,6 +21,11 @@ ul {
 }
 .lt-header {
   background-color: #006699;
+  }
+
+.lt-header .mui-icon {
+
+  color: #fff;
 }
 .lt-header h1 {
   color: #fff;

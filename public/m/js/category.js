@@ -32,6 +32,10 @@ $(function(){
         getSecondCategory(id);
     });
 
+    //$('#priceSort').on('tap',function(){
+    //    priceSort = priceSort == 1 ? 2 : 1;
+    //});
+
 });
 
 function getSecondCategory(id){
