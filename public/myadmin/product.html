@@ -8,7 +8,13 @@
 	<link rel="stylesheet" href="css/system.css">
 	<script src="assets/jquery/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/jquery-fileupload/jquery.ui.widget.js"></script>
+	<script src="assets/jquery-fileupload/jquery.iframe-transport.js"></script>
+	<script src="assets/jquery-fileupload/jquery.fileupload.js"></script>
 	<script src="js/common.js"></script>
+	<script src="js/product.js"></script>
+	<script src="js/template-web.js"></script>
+
 </head>
 <body>
 	<div class="system">
@@ -70,27 +76,12 @@
 	        </div>
 	        <div class="body">
 	        	<button class="operation btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">添加商品</button>
-	        	<table class="table table-bordered">
-	        		<tr>
-	        			<th>商品编号</th>
-	        			<th>商品名称</th>
-	        			<th>商品描述</th>
-	        			<th>商品库存</th>
-	        			<th>商品尺寸</th>
-	        			<th>是否下架</th>
-	        			<th>操作</th>
-	        		</tr>
-	        		<tr>
-	        			<td>6</td>
-	        			<td>【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋</td>
-	        			<td>商品描述</td>
-	        			<td>44</td>
-	        			<td>35-56</td>
-	        			<td>已上架商品</td>
-	        			<td>
-	        				<button type="button" class="btn btn-danger">下架</button>
-	        			</td>
-	        		</tr>
+				<div class="btn-group page operation " style="float: right">
+					<div class="btn btn-default " id="prevBtn">上一页</div>
+					<div class="btn btn-default" id="nextBtn">下一页</div>
+				</div>
+	        	<table class="table table-bordered" id="productBox">
+
 	        	</table>
 	        </div>
 		</div>
@@ -105,30 +96,30 @@
 	    	</div>
 	    	<div class="modal-body">
 	    		<div class="form-group">
-		    		<select class="form-control">
-		    			<option>-- 请选择品牌 --</option>
+		    		<select class="form-control" id="secondBox" name="brandId">
+
 		    		</select>
 	    		</div>
 	    		<div class="form-group">
-	    			<input type="text" class="form-control" placeholder="请输入产品名称">
+	    			<input type="text" class="form-control" placeholder="请输入产品名称" name="proName">
 	    		</div>
 	    		<div class="form-group">
-	    			<input type="text" class="form-control" placeholder="请输入产品描述">
+	    			<input type="text" class="form-control" placeholder="请输入产品描述" name="proDesc">
 	    		</div>
 	    		<div class="form-group">
-	    			<input type="text" class="form-control" placeholder="请输入产品数量">
+	    			<input type="text" class="form-control" placeholder="请输入产品数量" name="num">
 	    		</div>
 	    		<div class="form-group">
-	    			<input type="text" class="form-control" placeholder="请输入产品尺码,如29-39">
+	    			<input type="text" class="form-control" placeholder="请输入产品尺码,如29-39" name="size">
 	    		</div>
 	    		<div class="form-group">
-	    			<input type="text" class="form-control" placeholder="请输入商品原价">
+	    			<input type="text" class="form-control" placeholder="请输入商品原价" name="oldPrice">
 	    		</div>
 	    		<div class="form-group">
-	    			<input type="text" class="form-control" placeholder="请输入商品折扣">
+	    			<input type="text" class="form-control" placeholder="请输入商品折扣" name="price">
 	    		</div>
 	    		<div class="form-group">
-	    		   <input type="file" accept="image/jpeg" multiple>
+	    		   <input type="file" accept="image/jpeg" multiple data-url="/product/addProductPic" name="pic1" id="fileupload">
 	    		   <p class="help-block">最多上传三张图片</p>
 	    		 </div>
 	    	</div>
@@ -139,5 +130,39 @@
 	    </div>
 	  </div>
 	</div>
+
+<script type="text/html" id="productTpl">
+
+	<tbdoy>
+		<tr>
+			<th>商品编号</th>
+			<th>商品名称</th>
+			<th>商品描述</th>
+			<th>商品库存</th>
+			<th>商品尺寸</th>
+			<th>是否下架</th>
+			<th>操作</th>
+		</tr>
+		{{each rows}}
+		<tr>
+			<td>{{$value.id}}</td>
+			<td>{{$value.proName}}</td>
+			<td>{{$value.proDesc}}</td>
+			<td>{{$value.num}}</td>
+			<td>{{$value.size}}</td>
+			<td>{{$value.statu ? '上架商品' : '下架商品'}}</td>
+			<td>
+				<button type="button" class="btn btn-danger" id="statu">{{$value.statu ? '下架' : '上架'}}</button>
+			</td>
+		</tr>
+	</tbdoy>
+	{{/each}}
+</script>
+
+<script type="text/html" id="secondTpl">
+	{{each rows}}
+	<option value="{{$value.id}}">{{$value.brandName}}</option>
+	{{/each}}
+</script>
 </body>
 </html>

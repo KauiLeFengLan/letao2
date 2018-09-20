@@ -9,6 +9,19 @@
 	<script src="assets/jquery/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/common.js"></script>
+	<script src="js/catgory-first.js"></script>
+	<script src="js/template-web.js"></script>
+	<style>
+		#modalBody span {
+			width: 100%;
+			/* background-color: red; */
+			color: #f80000;
+			text-align: center;
+			float: left;
+			margin-bottom: 10px;
+			font-size: 16px;
+		}
+	</style>
 </head>
 <body>
 	<div class="system">
@@ -70,19 +83,24 @@
 	        </div>
 	        <div class="body">
 	        	<button class="operation btn btn-primary" data-toggle="modal" data-target=".category-first">添加分类</button>
-	        	<table class="table table-bordered">
-	        		<tr>
-	        			<th>分类的编号</th>
-	        			<th>分类名称</th>
-	        		</tr>
-	        		<tr>
-	        			<td>1</td>
-	        			<td>运动馆</td>
-	        		</tr>
+	        	<table class="table table-bordered " id="catgoryFirst-tpl">
+
+
 	        	</table>
-	        	<div class="btn-group page">
-	        		<div class="btn btn-default">上一页</div>
-	        		<div class="btn btn-default">下一页</div>
+	        	<div class="btn-group page pagination">
+						<ul class="pagination">
+							<li class=" btn-default"  id="erev">
+								<a href="#" aria-label="Previous">
+								<span aria-hidden="true">上一页</span>
+								</a>
+							</li>
+
+							<li class=" btn-default" id="next">
+								<a href="#" aria-label="Previous" >
+									<span aria-hidden="true">下一页</span>
+								</a>
+							</li>
+						</ul>
 	        	</div>
 	        </div>
 		</div>
@@ -95,18 +113,33 @@
 					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
 					<h4 class="modal-title" id="myLargeModalLabel">添加分类</h4>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body" id="modalBody">
+					<span></span>
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="请输入分类的名称">
+						<input type="text" class="form-control" placeholder="请输入分类的名称" name="catgoryFirstName">
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary">保存</button>
+					<button type="button" class="btn btn-primary" id="save">保存</button>
 				</div>
 			</div>
 		</div>
 	</div>
+<script type="text/html" id="catgoryFirstBox">
+	<tbody>
+	<tr>
+		<th>分类的编号</th>
+		<th>分类名称</th>
+	</tr>
+	{{each rows}}
 
+		<tr>
+			<td>{{$value.id}}</td>
+			<td>{{$value.categoryName}}</td>
+		</tr>
+	</tbody>
+	{{/each}}
+</script>
 </body>
 </html>

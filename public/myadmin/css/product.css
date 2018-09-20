@@ -1,0 +1,11 @@
+ .body
+ .nava {
+     float: right;
+}
+ .body .nava ul li {
+     float: left;
+     width: 30px;
+     border: 1px solid #eee;
+     font-size: 18px;
+     text-align: center;
+ }
